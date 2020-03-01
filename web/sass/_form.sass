@@ -1,0 +1,49 @@
+@import '_variables'
+
+/* Customize the label (the container) */
+.label-wrapper 
+	display: block
+	position: relative
+	padding-left: 25px
+	margin-bottom: 12px
+	cursor: pointer
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	&:hover input ~ .checkmark 
+		background-color: $color-primary
+
+	input 
+		position: absolute
+		opacity: 0
+		cursor: pointer
+		&:checked ~ .checkmark /* When the radio button is checked, add a blue background */
+			background-color: $color-theme
+			border: 1px solid transparent	
+			&:after /* Show the indicator (dot/circle) when checked */
+				display: block
+
+	/* Create a custom radio button */
+	.checkmark 
+		position: absolute
+		top: 4px
+		left: 0
+		height: 14px
+		width: 14px
+		background-color: transparent
+		border: 1px solid #999999
+		border-radius: 50%
+		&:after 
+			top: 4px	// Style the indicator (dot/circle) //
+			left: 4px
+			width: 4px
+			height: 4px
+			border-radius: 50%
+			background: white
+
+.checkmark 
+	&:after /* Create the indicator (the dot/circle - hidden when not checked) */
+		content: ""
+		position: absolute
+		display: none

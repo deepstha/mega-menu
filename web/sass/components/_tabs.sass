@@ -1,0 +1,32 @@
+@import './theme/color';
+.nav
+    &-pills
+        border-bottom: none
+    &-tabs
+        padding: 0 0 0 15px
+
+.tab
+    &-content
+        padding: 0 15px
+        background-color: $grey
+
+.navbar
+    &-dark 
+        .navbar
+            &-nav 
+                .nav
+                    &-link
+                        color: rgba($white, 0.8)
+                        padding-left: 0
+                        background-color: transparent
+                        &.active
+                            color: rgba($black, 0.9)
+
+                .nav-tabs
+                    background-color: grey
+                    .nav
+                        &-link
+                            padding-left: 15px
+                        &-item
+                            margin-right: 0
+                            padding-right: 0

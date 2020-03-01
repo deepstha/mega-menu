@@ -1,0 +1,98 @@
+=transition-smooth
+    -webkit-transition: all 0.2s linear
+    -moz-transition: all 0.2s linear
+    -ms-transition: all 0.2s linear
+    -o-transition: all 0.2s linear
+    transition: all 0.2s linear
+
+=transition-slow
+    -webkit-transition: all 0.5s linear
+    -moz-transition: all 0.5s linear
+    -ms-transition: all 0.5s linear
+    -o-transition: all 0.5s linear
+    transition: all 0.5s linear
+
+=transform($transform)
+    -webkit-transform: $transform
+    -moz-transform: $transform 
+    -ms-transform: $transform  
+    -o-transform: $transform 
+    transform: $transform 
+
+=cubic
+  -webkit-transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -moz-transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -o-transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+=cubic-slow
+  -webkit-transition: all 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -moz-transition: all 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -o-transition: all 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  transition: all 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+=cubic-lazy
+  -webkit-transition: all 1s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -moz-transition: all 1s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  -o-transition: all 1s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  transition: all 1s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+=gradient ($direction, $color1, $color2)
+  background: -moz-linear-gradient($direction, $color1 0%, $color2 100%)
+  background: -webkit-linear-gradient($direction, $color1 0%, $color2 100%)
+  backround: linear-gradient(to right, $color1 10%, $color2 100%)
+
+=gradientHalf ($direction, $color1, $color2)
+  background: -moz-linear-gradient($direction, $color1 50%, $color2 50%)
+  background: -webkit-linear-gradient($direction, $color1 50%, $color2 50%)
+  backround: linear-gradient(to right, $color1 50%, $color2 50%)
+
+=gradientDiagonal($color1, $color2)
+  background: -webkit-linear-gradient(right top, $color1 50%, $color2 50%)
+  background: -o-linear-gradient(right top, $color1 50%, $color2 50%)
+  background: -ms-linear-gradient(right top, $color1 50%, $color2 50%)
+  background: linear-gradient(right top, $color1 50%, $color2 50%)
+
+=flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+
+=webkit-sticky
+  position: -webkit-sticky !important
+  position: -moz-sticky !important
+  position: -ms-sticky !important
+  position: -o-sticky !important
+  position: sticky !important
+
+=border-dir($direction, $width, $style, $color) 
+  border-#{$direction}: $width $style $color
+
+
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius 
+    -ms-animation: $radius  
+    -o-border-radius: $radius 
+    -border-radius: $radius
+
+=box-shadow($box-shadow)
+    -webkit-box-shadow: $box-shadow
+    -moz-box-shadow: $box-shadow
+    -ms-box-shadow: $box-shadow  
+    -o-box-shadow: $box-shadow 
+    -box-shadow: $box-shadow  
+
+=animation($animation)
+    -webkit-animation: $animation
+    -o-animation: $animation
+    -moz-animation: $animation
+    animation: $animation
+
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})

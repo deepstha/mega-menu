@@ -1,0 +1,34 @@
+{
+  "name": "demography-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/deepstha/Demography.git"
+  },
+  "author": "Deep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/deepstha/Demography/issues"
+  },
+  "homepage": "https://gitlab.com/deepstha/Demography#README",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.2"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.7",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "jquery": "^3.4.1"
+  }
+}

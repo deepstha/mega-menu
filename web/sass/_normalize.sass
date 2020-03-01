@@ -1,0 +1,1490 @@
+*
+  margin: 0
+  padding: 0
+
+@import '_keyframes'
+@import '_form'
+@import 'mediaqueries'
+
+
+body
+  font-family: 'Poppins', sans-serif
+  background-color: $color-body-bg
+  display: inline-block
+  position: relative
+  color: $color-body
+  width: 100%
+  height: 100%
+  font-weight: 400
+  line-height: 28px
+  scroll-behavior: smooth
+
+  a
+    color: $color-theme
+    text-decoration: none
+
+    &:hover, &:focus
+      text-decoration: none
+      outline: 0
+      color: $color-theme
+
+.app
+
+  img
+    max-width: 100%
+
+  p
+    font-size: 14px
+    margin-bottom: 0.70rem
+    +laptop
+      font-size: 15px
+
+  figure
+    img
+      width: 100%
+
+  strong
+    color: inherit
+
+  sup
+    color: red
+
+  iframe
+    width: 100%
+    height: 100%
+
+  hr
+    margin: 5px 0
+
+  button:focus,
+  select:focus,
+  .btn:focus
+    outline: 0
+    +box-shadow(none)
+    color: rgba($color-body, 0.7)
+
+  option:selected 
+    color: red
+
+  .field
+    .input,
+    select
+      padding: 5px 15px
+      min-height: 40px
+      width: 100%
+
+    .select
+      min-height: 55px
+      width: 100%
+      font-size: 1rem
+
+  table
+    font-size: 12px
+    td,th
+      padding: 6px 10px !important
+    th
+      padding: 10px !important
+      font-weight: 600
+      min-width: 115px
+
+  .border
+    border-width: 1px
+    border-style: solid
+    border-color: $color-border
+
+  .help.is-danger
+    margin-top: 0
+
+  // .active
+  //   color: $color-theme
+  .navbar-right
+    margin-right: 0
+
+  //arrow dropdown
+  .arrow-traingle-down,
+  .navbar-link
+    position: relative
+    &::after
+      content: ""
+      border: none
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid
+      position: absolute
+      margin-top: -0.375em
+      right: 0
+      width: 0
+      height: 0
+      top: 58%
+      +transform (none)
+
+  .arrow-down,
+  .arrow-right,
+  .arrow-left
+    &::after
+      content: ""
+      border-width: 1px
+      border-style: solid
+      border-color: $color-theme
+      border-right: 0
+      border-top: 0
+      content: " "
+      display: block
+      height: 0.5em
+      pointer-events: none
+      position: absolute
+      +transform (rotate(-45deg))
+      transform-origin: center
+      width: 0.5em
+      margin-top: -0.375em
+      right: 1.125em
+      top: 50%
+
+  .arrow
+    &-right
+      &:after
+        +transform (rotate(-135deg))
+
+    &-left
+      &:after
+        border-left: 0
+
+  //Form
+  .label,label
+    color: rgba($color-black, 0.9)
+    font-size: 12px
+    font-weight: 600
+    padding-right: 5px
+    margin-bottom: 0.1em
+    line-height: 22px
+    +fullhd
+      font-size: 13px
+
+  textarea
+    max-height: 120px
+
+  //list-style
+  ul
+    margin-bottom: 0
+    
+  .order-list
+    padding-left: 15px
+
+  .list-style
+    margin-bottom: 0
+    li
+      display: block
+      margin-bottom: 10px
+      .gutter-lt
+        padding-left: 25px
+      span
+        margin: 0 5px
+      .fas,.far
+        margin-right: 5px
+      a
+        color: rgba($color-body, 0.8)
+        &:hover
+          color: rgba($color-theme-option, 0.8)
+
+    &.margin
+      li
+        &:not(:last-child)
+          margin-bottom: 8px
+
+    &.bordered
+      li
+        border-bottom: 1px solid rgba($color-light-grey, 0.4)
+        &:hover
+          .media-body
+            & >
+              *
+                color: $color-theme-option
+
+    &.outline
+      li
+        border: 1px solid $color-light-grey
+
+  .list-inline
+    margin-left: 0
+    display: inline-block
+    &.outline
+      li
+        border: 1px solid $color-light-grey
+        padding: 0 10px
+        margin: 0 2px
+    li
+      display: inline-block
+      margin-right: 0
+      padding: 0 2px
+      &:last-child
+        margin-right: 0
+
+  .list-style1
+    li
+      display: block
+
+  //Transparent
+  .border
+    &-trans
+      border-color: transparent !important
+    &-ls
+      border-width: 0 !important
+  //Transform
+  .translateUp
+    +transform(translateY(-50%))
+    +transition-smooth
+
+  .translateDown
+    +transform(translateY(-100%))
+    +transition-smooth
+
+  .translateLeft
+    +transform(translateX(-100%))
+    +transition-smooth
+    
+  .translateRight
+    +transform(translateX(100%))
+    +transition-smooth
+
+  //font-style
+
+  .title-big
+    font-size: 50px
+    font-weight: 600
+
+  .title-black
+    color: $color-black !important
+
+  .title-border
+    padding: 20px 0
+    position: relative
+    &:first-letter
+      color: rgba($color-black, 0.8)
+    &:before
+      border-bottom: 4px solid $color-light-grey
+      width: 50px
+      content: ''
+      @extend .absolute-block
+      top: -15px
+
+  .title-first
+    position: relative
+    &:first-letter
+      color: rgba($color-white, 1)
+      +desktop
+        color: rgba($color-black, 0.8)
+
+  .title1,.title2, .title3, .title4, .title5,.title6, .title7
+    //font-weight: 400
+    line-height: 1.5
+
+  .title1
+    font-size: 27px
+    line-height: 41px
+    font-weight: 300
+    span
+      display: block
+    +desktop
+      font-size: 30px
+    +laptop
+      font-size: 40px
+
+  .title2
+    font-size: 25px
+    font-weight: 600
+    +tablet
+      font-size: 28px
+    +laptop
+      font-size: 35px
+      line-height: 1.2
+
+  .title3
+    line-height: 35px
+    font-size: 25px
+    +laptop
+      font-size: 28px
+
+  .title4
+    font-size: 20px
+    +laptop
+      font-size: 22px
+
+  .title5
+    font-size: 14px
+    +desktop
+      font-size: 15px
+    +laptop
+      font-size: 16px
+
+  .title6
+    font-size: 13px
+    +laptop
+      font-size: 15px
+
+  .title7
+    font-size: 12px
+
+  .title-bold
+    font-weight: 600
+
+  .title-bolder
+    font-weight: 900
+
+  .title-wrapper
+    margin-bottom: 0
+    margin-top: 10px
+    p
+      max-width: 420px
+      font-weight: 400
+
+  .title-up
+    text-transform: uppercase
+
+  .title-up-bold
+    text-transform: uppercase
+    font-weight: 600
+
+  .font-sm
+    color: $color-dark-grey
+    font-size: 88%
+    font-weight: 400
+    letter-spacing: 0.1px
+
+  .title-head
+    font-size: 20px
+    line-height: 32px
+    margin-bottom: 5px
+    color: $color-black
+    font-weight: 600
+
+  .title
+    font-weight: 400
+    line-height: 1.125
+
+  .sub-title
+    font-weight: 400
+    font-size: .750rem
+
+  // Text Color Picker
+  .is
+    &-grey
+      color: $color-grey !important
+    &-theme
+      color: $color-theme !important
+    &-option
+      color: $color-theme-option !important
+    &-red
+      color: $color-danger
+    &-green
+      color: $color-success
+    &-yellow
+      color: $color-yellow
+    &-dark-grey
+      color: $color-dark-grey
+    &-light-grey
+      color: $color-light-grey
+    // Background Color Picker
+    &-diagonal
+      &:after
+        content: ''
+        // background-image: url('../images/banner-wrapper.svg')
+        background-repeat: no-repeat
+        +gradient(left, rgba($color-theme,0.49), $color-theme-option)
+        +transform(skewX(-60deg))
+        width: 60%
+        height: 200%
+        z-index: -1
+        top: 33px
+        @extend .absolute-block
+        right: 0
+        left: auto !important
+    &-blur
+      &-3
+        opacity: 0.3
+      &-4
+        opacity: 0.4
+      &-5
+        opacity: 0.5
+      &-6
+        opacity: 0.6
+
+  .theme-light
+    background-color: rgba($color-grey, 0.3)
+
+  .bg
+    &-option
+      background-color: $color-theme-option
+      color: $color-white
+    &-body
+      background-color: $color-body-bg
+      &.is-diagonal
+        min-height: 800px
+        &:after
+          width: 130%
+          +gradient(left, rgba($color-grey, 0.20), rgba($color-grey, 0.20))
+          +transform(skewX(-65deg))
+    &-white
+      background-color: $color-white
+      &.is-diagonal
+        min-height: 800px
+        &:after
+          width: 130%
+          +gradient(left, rgba($color-grey, 0.20), rgba($color-grey, 0.20))
+          +transform(skewX(-65deg))
+    &-grey
+      background-color: rgba($color-grey, 0.7)
+      color: $color-white
+      &.is-diagonal
+        &:after
+          width: 117%
+          +gradient(left, rgba($color-grey, 0.8), rgba($color-grey, 0.6))
+          +transform(skewX(-65deg))
+
+      .mid-block
+        p
+          color: rgba($color-dark-grey, 0.9)
+    &-gradient
+      position: relative
+      background: -moz-linear-gradient(left, #f7f7f7 0%, #eff4ff 100%)
+      background: -webkit-linear-gradient(left, #f7f7f7 0%, #eff4ff 100%)
+      backround: linear-gradient(to right, #f7f7f7 10%, #eff4ff 100%)
+      &--diagonal
+        background-position: right
+        +gradientDiagonal(transparent, $color-gradient)
+      &.wave
+        padding: 17% 0 5%
+      &.c-item
+        &:after
+          content: ""
+          width: 300px
+          height: 300px
+          border: 30px solid $color-grey
+          position: absolute
+          left: 0
+          top: 40%
+      &--half
+        +gradientHalf(left, #f6f6f6, $color-gradient)
+    &-theme, &-secondary
+      background-color: rgba($color-theme, 0.90)
+      color: $color-white
+      .c-item
+        background-color: $color-theme-light
+        color: $color-theme-text
+        padding: 25px !important
+        .icon-cirlce
+          color: red
+        .icon
+          &-cirle
+            border-color: $color-theme
+            border-width: 7px
+      &-light
+        background-color: $color-theme-light
+        color: $color-white
+    &-secondary
+      background-color: $color-secondary
+      color: $color-white
+  //gutter
+  .gutter
+    padding: 15px
+    &-40
+      padding: 30px
+      +desktop
+        padding: 40px
+
+  .gutter1
+    padding: 40px 0
+    +desktop
+      padding: 8% 0
+
+  .gutter2
+    padding: 30px 0
+
+  .gutter3
+    padding: 15% 0
+    +desktop
+      padding: 10% 0 
+
+  .gutter-lt
+    padding-left: 30px !important
+    &-sm
+      +desktop
+        padding-left: 20px
+
+  .gutter-ls-rt
+    padding-right: 0
+
+  .gutter-ls-btm
+    padding: 15px 15px 0
+
+  .gutter-ls-lt
+    padding-left: 0
+
+  .gutter-ls-sd
+    padding-left: 0
+    padding-right: 0
+    &:last-child
+      +desktop
+        padding-left: 15px
+
+  .gutter-ls
+    padding: 0
+
+  .gutter-tp
+    padding-top: 30px
+
+  .gutter-ls-tp
+    padding-top: 0
+
+  .gutter-tp-btm
+    padding-top: 15px
+    padding-bottom: 15px
+    
+  .gutter-ls-btm
+    padding-bottom: 0
+
+  //margin
+  .margin-lg
+    margin: 50px 0
+
+  .margin-top
+    margin-top: 8%
+    +tablet
+      margin-top: 15%
+
+  .margin-left
+    margin-left: 10px
+
+  .margin-btm
+    margin: 0
+    margin-bottom: 10px !important
+    &-sm
+      +desktop
+        margin-bottom: 35px
+
+  .margin-rt-one
+    &:not(:last-child)
+      margin-right: 10px
+
+  //button
+  button[type="submit"]
+    cursor: pointer !important
+
+  button
+    cursor: pointer
+
+  .button, .btn
+    font-size: 14px
+    min-width: 140px
+    +transition-smooth
+    +border-radius(0)
+    &:not(:last-child)
+      margin-right: 6px
+    &:hover
+      opacity: 0.7
+      +transition-smooth
+    .fa
+      padding-left: 5px
+
+    &.btn-icon
+      padding: 5px
+    &.shadow
+      +box-shadow(0 0 30px rgba($color-black,0.05) !important)
+
+  .btn
+    &-option
+      background-color: $color-theme-option
+      color: $color-white
+      &:hover
+        color: $color-white
+        background-color: rgba($color-black, 0.3)
+
+  .is-default
+    padding: 5px 10px
+    background-color: $color-grey
+
+  //Props
+  .is-circle
+    +border-radius(50%)
+    width: 15.625rem
+    height: 15.625rem
+    overflow: hidden
+    +tablet-only
+      width: 170px
+      height: 170px
+    &.bordered
+      border: 5px solid $color-light-grey
+    &.big
+      border: 70px solid $color-grey
+      width: 300px
+      height: 300px
+      +desktop
+        width: 450px
+        height: 450px
+    &.theme
+      border-color: rgba($color-theme, 0.95)
+      color: $color-theme
+    &.transparent
+      opacity: 0.05
+      +box-shadow(52px -71px 0px rgba( $color-black,0.2))
+    &.polygon
+      +box-shadow(20px -21px 140px rgba( $color-black,0.45))
+      opacity: 0.3
+      +border-radius(2% 21% 95% 51%)
+      +transform(rotate(12deg))
+      background-color: rgba($color-theme, 0.95)
+      border-color: rgba($color-white, 0.8)
+      border-width: 45px
+      & + .icon
+        min-width: 100px
+        top: 40%
+        +laptop
+          left: 57%
+        .fa
+          font-size: 95px
+          color: rgba($color-white, 0.8)
+
+  .has
+    &-radius25
+      +border-radius(25px)
+    &-radius10
+      +border-radius(10px)
+  .is-outline
+    background-color: transparent
+    border: 1px solid $color-light-grey
+    &.theme
+      border-color: $color-theme
+      color: $color-theme
+      &:hover
+        color: $color-white
+    &.no-bg
+      &:hover
+        color: inherit
+        background-color: transparent
+        border-color: $color-light-grey
+    .is-count
+      min-width: 50px
+      display: inline-block
+    button
+      border: none
+      +box-shadow(none)
+      background-color: transparent
+      &:hover
+        color: $color-theme
+
+  //Info detail
+  .info
+    .title
+      font-weight: 400
+      color: $color-white
+      margin-bottom: 0
+    span
+      opacity: 0.7
+      font-weight: 300
+      font-size: 90%
+      display: inline-block
+      vertical-align: top
+  .auto
+    &-center
+      margin: 0 auto 15px
+
+  .is-item
+    background-color: rgba($color-light-grey, 0.6)
+    border: none
+
+  //color settings 
+  .is-primary
+    background-color: $color-theme
+    color: #ffffff
+    border: 1px solid transparent
+    &:focus
+      color: $color-white
+
+  .light
+    p
+      opacity: 0.5
+    .bordered
+      border-color: transparent
+      border-width: 1px
+    p,span,.bordered
+      +cubic-slow
+    &:hover
+      p
+        opacity: 0.8
+      .title
+        color: $color-theme
+      .bordered
+        border-width: 4px
+        border-color: $color-light-grey
+        
+  .button.is-primary:hover,
+  .btn.is-primary:hover,
+  .button.is-primary.is-hovered
+    opacity: 0.8
+    background-color: $color-theme
+    color: $color-white
+
+  .button.is-theme, .btn.is-theme
+    background-color: $color-theme
+
+  .button, .btn
+    &.is-outline
+      background-color: transparent
+      border-color: $color-grey
+      color: $color-grey
+      min-height: 0 !important
+      padding: 10px 20px !important
+      height: auto !important
+      &:hover
+        border-color: $color-theme
+        background-color: $color-theme
+        color: $color-white
+    &.is-theme
+      border-color: $color-theme
+      color: $color-theme
+
+  .nav-outline
+    background-color: transparent
+    border-color: #61C07D
+    border-radius: 2px
+    select
+      background-color: transparent
+      color: #bce3d5
+      border-radius: 3px
+      height: 32px
+      min-width: 95px
+
+  //badge
+  .has-badge
+    position: relative
+    .badge
+      position: absolute
+      top: 0
+      right: -7px
+      background-color: rgba($color-light-grey, 0.5)
+      color: $color-theme
+      +border-radius(50%)
+      font-weight: 400
+      min-height: 20px
+      min-width: 20px
+
+  //layout
+  .is-danger
+    background-color: $color-danger
+
+  .is-primary
+    background-color: $color-theme
+
+  .theme-option
+    background-color: $color-theme-option
+
+  .row-wrap
+    margin: 0 -15px
+    +desktop
+      margin: 0 -5px
+  .col
+    width: 100%
+    a
+      display: block
+
+  .relative-block
+    position: relative
+
+  [class*="marginTop"]
+    margin-top: -12%
+    position: relative
+
+  .marginTop
+    margin-top: -29%
+    +fullhd
+      margin-top: -23%
+    position: relative
+    &-center
+      text-align: center
+      position: relative
+      &.top
+        top: -35px
+    &.top
+      margin-top: -320px
+      .container
+        padding-top: 30px
+    .container
+      padding-top: 22%
+    
+    .box-layout
+      margin-bottom: 5%
+
+  .z-index
+    position: relative
+    z-index: 10
+
+  .absolute-block
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 9
+    &.gutter
+      padding: 10% 0
+    &.right
+      right: 0
+      left: auto
+      &.length
+        right: 365px
+      &-nxt
+        right: -35px
+        left: auto
+    &.left
+      left: -22%
+      padding: 5% 0
+      &.length
+        left: 135px
+      &-bfr
+        left: -35px
+    &.btm-left
+      bottom: 10px
+      left: 10px
+      top: auto !important
+    &.btm
+      top: auto
+      bottom: 0
+    &.top
+      top: 15px
+      &-ls
+        top: -1px
+    &.center
+      top: 50%
+      left: 50%
+    &.midBtm
+      bottom: 10%
+      top: auto
+    & >
+      .btm-right
+        top: auto
+        right: 7%
+        bottom: 0
+        background-color: #656565
+        border-top-right-radius: 5px
+        border-top-left-radius: 5px
+        +box-shadow(0 -10px 20px rgba(0,0,0,0.3))
+        +fullhd
+            right: 6%
+        span
+          min-width: 115px
+          padding: 10px 15px
+          display: inline-block
+          text-align: center
+
+        &.up
+          max-width: 320px
+          left: auto
+          background: white
+          padding: 15px
+          bottom: 6%
+          border-radius: 10px
+          right: 3%
+
+  .white-block
+    color: $color-white
+    p
+      color: $color-white
+
+  .dark-block
+    color: $color-black
+    p
+      color: rgba($color-black, 0.7)
+      
+  .gradient-block
+    background: -moz-linear-gradient(top, #101010 0%, #636262 100%)
+    background: -webkit-linear-gradient(top, #101010 0%,#636262 100%)
+    background: linear-gradient(to bottom, #101010 0%,#636262 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#101010', endColorstr='#636262',GradientType=0 )
+    color: $color-white
+    position: relative
+    .title-bold
+      color: $color-white
+      margin-bottom: 15px
+
+    .center-wrapper
+      max-width: 615px
+  
+  //breadcrumb
+  .breadcrumb
+    padding: 0 4px
+    background-color: transparent
+    &-item
+      &:before
+        color: rgba($color-white, 0.8)
+    li
+      a
+        color: $color-white
+      &.active, &:before
+        color: rgba($color-white, 0.7)
+      & +
+        li
+          &:before
+            color: rgba($color-white, 0.8)
+            content: "-"
+            padding: 0 5px
+            font-size: 8px
+            display: inline-block
+            vertical-align: top
+
+  //widget
+  .widget
+    &-list
+      padding-bottom: .9375rem
+      padding-top: .9375rem
+      padding-left: .3125rem
+      &:first-child
+        padding-top: 1.25rem
+      & >
+        .title5
+          padding-bottom: 2px
+      li
+        +cubic
+        &:hover
+          padding-left: .25rem
+
+  //link
+  .link
+    color: $color-black
+  .has-link
+    color: $color-black
+    &:after
+      content: ""
+      position: absolute
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+    &:hover
+      color: $color-theme
+
+  //icon block
+  .icon
+    &-block
+      margin-bottom: 5px
+      &.theme
+        .icon
+          width: 20px
+          fill: $color-black
+    &-circle
+      +border-radius(50%)
+      height: 100px
+      width: 100px
+      min-height: auto !important
+      padding: 10px
+      display: inline-block
+      font-size: 1.6rem
+      vertical-align: middle
+      background-color: rgba($color-body-bg, 1)
+      text-align: center
+      color: $color-theme
+      border-width: 7px
+      border-color: $color-theme-light
+      border-style: solid
+      margin-right: 5px
+      &.sm
+        height: 5rem
+        width: 5rem
+      &--transparent
+        border-color: transparent
+      &.theme
+        width: 50px
+        height: 50px
+        text-align: left
+        padding: 8px
+        color: $color-theme
+        background-color: $color-white
+      &.white
+        background-color: $color-white
+        color: $color-theme
+      &.shadow
+        +box-shadow(4px 5px 6px rgba($color-black, 0.15) !important)
+    &-lg
+      font-size: 2.5rem
+      margin-bottom: 1.5625rem
+      +tablet-only
+        font-size: 1.5rem
+    
+  .icon-border
+    // border: 1px solid $color-white
+    // // margin: 10px
+    // padding: 10px
+    .list-inline
+      margin-bottom: 0
+      .icon
+        background-color: rgba($color-theme, 0.7)
+        +border-radius(2px)
+        border: 1px solid transparent
+        padding: 6px
+        width: 30px
+        height: 30px
+        +transition-smooth
+        &:hover
+          border: 1px solid rgba($color-white, 0.7)
+          background-color: rgba($color-theme, 1)
+
+  .icon-bar
+    width: 65px
+    .nav-tabs
+      a
+        opacity: 0.7
+        line-height: 1.2
+      .active
+        a
+          opacity: 1
+    .icon
+      fill: rgba($color-white, 0.7)
+  .mid
+    &-block
+      width: 100%
+      padding-left: 15px
+      padding-right: 15px
+      max-width: 51.75rem
+      +fullhd
+        max-width: 830px
+      margin: 0 auto
+      p
+        opacity: 0.8
+        padding: 5px 0
+      li
+        padding: 15px 30px
+        &:hover
+          .is-circle
+            +box-shadow(25px 3px 30px rgba(0, 0, 0, 0.10))
+            +transition-smooth
+            top: -10px
+            background: rgb(255,255,255)
+            background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(247,247,242,1) 33%, rgba(244,247,242,1) 100%)
+            background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(247,247,242,1) 33%,rgba(244,247,242,1) 100%)
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(247,247,242,1) 33%,rgba(244,247,242,1) 100%)
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7f2',GradientType=1 )
+            .icon
+              fill: $color-red
+        a
+          display: inline-block
+
+        .is-circle
+          width: 125px
+          height: 125px
+          display: table
+          border-radius: 50%
+          position: relative
+          top: 0
+          background: rgba($color-white, 0.4)
+          +box-shadow(6px 3px 5px rgba(0,0,0,0.10))
+          +transition-slow
+          .icon
+            float: none
+            width: auto
+            margin-right: 0
+            fill: #949494
+            display: inline-block
+      &.md
+        +desktop
+          max-width: 82%
+    &-sd
+      &-list
+        &.space
+          .media
+            &:not(:last-child)
+              +desktop
+                min-height: 150px
+            &:first-child
+              +desktop
+                min-height: 190px
+                margin-top: 45px
+  .headline-center
+    text-align: center
+    margin-bottom: 35px
+  //nav-tabs
+  .nav-tabs
+    &.black
+      li
+        a
+          color: $color-white 
+    &.half
+      li
+        width: 50%
+  .tab-content
+    .tab-pane
+      height: 100%
+  .absolute-tab
+    .border-theme
+      li
+        a
+          background-color: transparent
+    .tab-hover-wrapper
+      .tab-hover
+        display: table
+        background-color: transparent
+        border: 1px solid $color-white
+        color: $color-white
+        padding: 6px 5px 4px
+        +transition-smooth
+        +border-radius(3px)
+      .tab-item
+        display: none
+      .tab-hover-content
+        display: none
+
+      .icon-bar
+        .icon
+          fill: rgba($color-theme, 0.7)
+        .nav-tabs
+          li
+            background-color: transparent
+            border: 1px solid rgba($color-theme, 0.7)
+            +border-radius(3px)
+            &:hover
+              // background-color: $color-theme
+              +border-radius(1px)
+              border: 1px solid transparent
+            &:last-child
+              display: none
+      &:hover
+        .tab-item
+          display: block
+        .tab-hover-content
+          +flexbox
+          height: auto
+        .tab-hover
+          border: 1px solid transparent
+          background-color: $color-theme
+          +border-radius(1px)
+    .tab-hover-content
+      .item
+        img
+          border: 2px solid transparent
+        .active
+          font-weight: 600
+          img
+            border: 2px solid $color-theme
+  .box
+    &-tab
+      background-color: $color-light-grey
+    &-layout
+      .is-outline
+        height: 230px
+        padding: 30px 20px
+        min-height: 300px
+        +border-radius(8px)
+        +mobile
+          margin-bottom: 20px
+        +tablet-only
+          min-height: 350px
+        +laptop
+          padding: 30px 25px
+        .valign-middle
+          .title-bold
+            padding: 5px 0
+        p
+          font-size: 14px
+          opacity: 0.8
+          min-height: 5.125rem
+      .nav-tabs
+        border-bottom: 1px solid #eaeaea
+        li
+          & >
+            .active
+              & >
+                a
+                  background-color: $color-white
+                  color: $color-theme
+      .tab-content
+        padding: 25px
+        border-color: #eaeaea
+        border-width: 1px
+        border-style: solid
+        border-top: none
+        background-color: $color-white
+        .table
+          th,td
+            height: 40px
+      .c-item
+        height: 220px
+        padding: 15px
+        margin-bottom: 15px
+        +border-radius(5px)
+        &.table-block
+          height: 250px
+          margin-top: 0
+          +desktop
+            min-height: 270px
+          +laptop
+            min-height: 300px
+        &.auto
+          height: auto
+          min-height: 250px
+          +fullhd
+            min-height: 285px
+  .tab-panel
+    .nav-tabs 
+      border: none
+      +box-shadow(0 0 23px rgba(0,0,0,0.10))
+      & >
+        li
+          & >
+            a
+              padding: 22px 14px
+              margin-right: 0
+              font-size: 13px
+              font-weight: 600
+              color: $color-black
+              border: none
+              &:hover
+                background-color: transparent
+                border-color: transparent
+          &.active
+            & >
+              a
+                color: $color-red
+                border: none
+                &:hover, &:focus
+                  color: $color-red
+                  border: none
+
+    &.center
+      .nav-tabs 
+        border: none
+        & >
+          li
+            float: none
+            display: inline-block
+    .tab-content
+      display: inline-block
+      max-width: 865px
+  .fullHeight
+    height: 100%
+  .left-block
+    +tablet
+      float: left
+      width: 50%
+  .right-block
+    +tablet
+      float: right
+      width: 50%
+  .inline-absolute
+    .left-block
+      width: 100%
+      +tablet
+        width: 90%
+
+    .absolute-block
+      left: auto
+  .inline-block
+    display: inline-block
+    vertical-align: top
+  .centered-block
+    transform: translate(-50%, -50%)
+    position: absolute
+    left: 50%
+    top: 50%
+    text-align: center
+    width: 100%
+    z-index: 10
+    +tablet-max
+      text-align: center !important
+    &.left
+      left: 30%
+      width: 45%
+      text-align: left
+    &.btm
+      top: auto
+      bottom: -116px
+    &.top-ls
+      top: -18px
+  .full-block
+    display: block
+    width: 100%
+  .overlay
+    background-color: rgba(0,0,0,0.4)
+    position: absolute
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    &.dark
+      background-color: rgba(0,0,0,0.6)
+  .overflow
+    overflow: hidden
+    position: relative
+  .image
+    &-centered
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      min-height: 200px
+      &-resize
+        background-color: transparent
+        background-repeat: no-repeat
+        background-position: 22%
+        background-size: 67%
+      &.c-item
+        min-height: 350px
+      &.right
+        background-position: right
+        background-size: contain
+      &.left
+        background-position: 20% center
+        +desktop
+          background-size: 620px
+
+    &.contain
+      background-size: contain
+    
+    &-fixed
+      background-attachment: fixed
+  .is-fullWidth
+    width: 100%
+    input, select
+      width: 100%
+  .is-fullheight
+    +calc( height, '100vh - 70px')
+  .table-block
+    display: table
+    width: 100%
+  .valign-middle
+    display: table-cell
+    vertical-align: middle
+    text-align: center
+    position: relative
+    z-index: 1
+    .title-bold
+      padding: 15px 0
+  .is-sticky
+    +webkit-sticky
+    top: 40%
+    z-index: 10
+  .max
+    &-height
+      height: 100%
+    &-width
+      &-half
+        max-width: 550px
+        +laptop
+          max-width: 650px
+          min-height: 650px
+      &-90
+        & >
+          *
+            max-width: 90%
+      &-270
+        max-width: 270px
+  //Flex css
+  .body-wrap
+    +calc( height, '100vh - 52px')
+    width: 100%
+    +tablet
+      +flexbox
+  .flex-box
+    +tablet
+      flex-flow: row wrap
+      +flexbox
+    & >
+      .item
+        margin: 0 5px
+        width: 100%
+        min-height: 40px
+        figure
+          background-color: $color-grey
+        a
+          display: block
+    &.wrap
+      margin: 0 -5px
+    &-sm
+      +desktop
+        +flexbox
+      & >
+        *
+          flex: 1
+          overflow: hidden
+          +cubic-slow
+  .flexOrder
+    &-1
+      +tablet
+        order: 1 
+    &-2
+      +desktop
+        order: 3
+
+    &-3
+      +tablet
+        order: 2
+  .flex-row
+    +tablet
+      +flexbox
+      height: 100%
+      flex-flow: column nowrap
+      position: relative
+      .flex-row-child
+        height: 100%
+      .flex-row-half
+        height: 50%
+  .tab-center
+    justify-content: center
+    border: none !important
+    .nav
+      &-item:not(:last-child)
+        border-right: 1px solid $color-grey
+      &-link
+        color: $color-dark-grey
+        font-weight: 600
+        font-size: 13px
+        padding: 0 25px
+        line-height: 1
+        &:focus, &:hover
+          border-color: transparent
+        &.active
+          background-color: transparent
+          color: $color-theme
+          border-color: transparent
+  .is-active
+    label
+      color: $color-theme
+      font-weight: 600
+
+  .hidden
+    &-block
+      flex: 0
+      opacity: 0.1
+    &-bg
+      background-image: none
+
+    &-xs
+      +mobile
+        display: none
+    &-sm
+      +tablet-max
+        display: none
+    &-md
+      +desktop
+        display: none
+
+  .float
+    &-sm
+      float: right
+  .xs
+    &-margin
+      margin-bottom: 20px
+  //Scroll
+  .is-scroll
+    overflow: auto
+
+  //max heihgt/width
+  +tablet
+    .half-block
+      +tablet
+        width: 50%
+        float: left
+
+  +tablet-max
+    .sm-center
+      text-align: center
+      .navbar-right
+        float: none !important
+
+  +mobile
+    .xs-center
+      text-align: center
+
