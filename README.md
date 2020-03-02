@@ -1,3 +1,3 @@
-# ecommerce-template
+# demo-template
 
-A demo project of ecommerce website made with bootstrap, and gulp.js
+A project of demo website made with bootstrap, and gulp.js
