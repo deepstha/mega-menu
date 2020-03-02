@@ -1,3 +1,3 @@
 # demo-template
 
-A project of demo website made with bootstrap, and gulp.js
+A project of demo website made with Bootstrap4, Sass and Gulp.js
