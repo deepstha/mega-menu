@@ -5117,6 +5117,29 @@ ul li {
     margin-right: 0;
     padding-right: 0; }
 
+.popupModal .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  text-align: center;
+  border: 2px solid #274f6f;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }
+  .popupModal .close span {
+    position: relative;
+    top: -3px;
+    right: -1px; }
+  .popupModal .close:focus {
+    outline: 0; }
+
 /*************** SCROLLBAR BASE CSS ***************/
 .scrollbar-block > * {
   max-height: 200px; }
